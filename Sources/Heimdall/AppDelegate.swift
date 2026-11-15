@@ -11,6 +11,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+        // A stable name lets macOS save the icon's position, which is how menu bar managers
+        // like Thaw move it.
+        item.autosaveName = "Heimdall"
         let image = NSImage(systemSymbolName: "binoculars", accessibilityDescription: "Heimdall")
         image?.isTemplate = true
         item.button?.image = image
