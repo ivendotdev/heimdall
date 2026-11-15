@@ -84,7 +84,8 @@ CASK_VERSION="$(sed -nE 's/^  version "(.*)"$/\1/p' "$CASK")"
 [ "$CASK_VERSION" = "$CURRENT" ] || fail "The cask is at $CASK_VERSION but $PLIST is at $CURRENT. Fix that first."
 (( $(version_number "$VERSION") > $(version_number "$CURRENT") )) || fail "$VERSION isn't higher than the current $CURRENT."
 
-read -r -p "Release $CURRENT → $VERSION publicly on GitHub and Homebrew? [y/N] " answer
+read -r -p "Release $CURRENT → $VERSION publicly on GitHub and Homebrew? [y/N] " answer \
+    || fail "No answer (run it in an interactive terminal). Cancelled."
 [ "$answer" = y ] || [ "$answer" = Y ] || fail "Cancelled."
 
 # --- 1. Bump the version and build the zip. ---
