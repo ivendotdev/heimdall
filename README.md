@@ -50,8 +50,7 @@ This builds, signs, installs to `/Applications`, and launches Heimdall. Apps you
 ## Releasing
 
 ```sh
-./build.sh --package                                  # creates build/Heimdall-<version>.zip
-gh release create v<version> build/Heimdall-<version>.zip
+./release.sh 0.2.0
 ```
 
-Bump `CFBundleShortVersionString` (and `CFBundleVersion`) in `Support/Info.plist` first.
+This bumps the version in `Support/Info.plist`, builds the zip, commits, tags and pushes, publishes the GitHub release, then updates the cask in [ivendotdev/homebrew-tap](https://github.com/ivendotdev/homebrew-tap) (expected at `../homebrew-tap`, or set `TAP_DIR`). It checks everything first and asks before publishing.
