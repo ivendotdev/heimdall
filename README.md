@@ -14,6 +14,16 @@ Requires macOS 14 or later. Runs on Apple silicon and Intel.
 
 ## Install
 
+### Homebrew
+
+```sh
+brew tap ivendotdev/tap
+brew trust --cask ivendotdev/tap/heimdall
+brew install --cask heimdall
+```
+
+You'll still need the one-time **Open Anyway** step below the first time you open it.
+
 ### Download
 
 1. Download `Heimdall-<version>.zip` from [Releases](https://github.com/ivendotdev/heimdall/releases), unzip it, and move `Heimdall.app` to `/Applications`.
