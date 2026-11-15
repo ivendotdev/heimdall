@@ -54,3 +54,7 @@ This builds, signs, installs to `/Applications`, and launches Heimdall. Apps you
 ```
 
 This bumps the version in `Support/Info.plist`, builds the zip, commits, tags and pushes, publishes the GitHub release, then updates the cask in [ivendotdev/homebrew-tap](https://github.com/ivendotdev/homebrew-tap) (expected at `../homebrew-tap`, or set `TAP_DIR`). It checks everything first and asks before publishing.
+
+## License
+
+[MIT](LICENSE)
